@@ -24,8 +24,11 @@ app.signal_connect "activate" do |application|
   # just 1 cell horizontally and vertically (ie no spanning)
   grid.attach(button, 0, 0, 1, 1)
 
-  button = Gtk::Button.new(:label => "Button 2")
-  button.signal_connect("clicked") { puts "Hello World" }
+  button = Gtk::Button.new(:label => "Vscode boomer")
+  button.signal_connect("clicked") { 
+   system("cd && code Documentos/boomer/boomerpay-web-rails && cd Documentos/boomer/boomerpay-web-rails && sudo docker-compose up")
+  
+  }
   # Place the second button in the grid cell (1, 0), and make it fill
   # just 1 cell horizontally and vertically (ie no spanning)
   grid.attach(button, 1, 0, 1, 1)
@@ -34,7 +37,7 @@ app.signal_connect "activate" do |application|
   button.signal_connect("clicked") { window.destroy }
   # Place the Quit button in the grid cell (0, 1), and make it
   # span 2 columns.
-  grid.attach(button, 0, 1, 2, 1)
+  grid.attach(button, 2, 0, 2, 1)
 
   # Now that we are done packing our widgets, we show them all
   # in one go, by calling Gtk::Widget#show_all on the window.
